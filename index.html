@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Potta+One&family=Roboto:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="prism/prism.css" />
+    <script src="prism/prism.js"></script>
+
+    <title>Cheat Sheet for Data structures</title>
+  </head>
+  <body>
+    <nav>
+      <span class="logo"><img src="img/copy-logo.png" alt="" /></span>
+      <div class="content center">This is My Data structures Cheat Sheet !</div>
+    </nav>
+    <div class="container">
+      <b> Data structure:</b> it is a collection of data values, the
+      relationships among them, and the functions or operations that can be
+      applied to the data.
+      <br />
+      <br />
+      <b>Algorithm: </b>is a finite sequence of well-defined instructions,
+      typically used to solve a class of specific problems or to perform a
+      computation.
+      <br />
+      <br />
+      <b>Abstract Data Type: </b> an abstract data type (ADT) is a mathematical
+      model for data types. An abstract data type is defined by its behavior
+      (semantics) from the point of view of a user, of the data, specifically in
+      terms of possible values, possible operations on data of this type, and
+      the behavior of these operations.
+      <br />
+      <br />
+      <b>Time Complexity: </b>It is the study of the efficiency of algorithms.
+      It tells us how much time is taken by an algorithm to process a given
+      input.
+      <br />
+      <br />
+      <ol>
+        <li>
+          <b>Array as ADT: </b> An array ADT holds the collection of given
+          elements (can be int, float, custom) accessible by their index.<br /><br />
+          <ul>
+            <li>
+              <b>Minimum Functionality required:</b> get and set functions that
+              can get the data of a given index from the array and set the data
+              of a given index respectively.
+            </li>
+            <br />
+            <li>
+              <b>Additional Functionality required: </b>
+              max,min,sort,search,insert,append
+            </li>
+          </ul>
+        </li>
+
+        <br />
+        <ul>
+          <li><b>Declaring array:</b> Snippet for declaring array</li>
+        </ul>
+        <pre class="language-c"><code>data_type arr[size_t];
+// data_type can be any data type and size_t is the size of array 
+
+//example of int Array
+int arr[5]; 
+// declaring an integer array of 5 elements, the array element's data is randomly alloted.
+
+int arr1[5]={9,1,8,3,5};
+// above declaration can also be defined as a vector of size '5' in c++ language.
+
+// using for loop to assign values given by user to the elements 
+for(int i=0; i< size_of_array;i++){
+  scanf("%d",&arr[i]);
+}
+</code></pre>
+        <br />
+        <ul>
+          <li><b>Printing elements of array:</b></li>
+          <pre
+            class="language-c"
+          ><code>// using for loop printing elements with sapce separation 
+for(int i=0; i< size_of_array;i++){
+  printf("%d ",arr[i]);
+}</code></pre>
+        </ul>
+        <br />
+
+        <ul>
+          <li>
+            <b>Reversing an array: </b>Using a swap function we try to reverse
+            an array
+          </li>
+          <pre
+            class="language-c"
+          ><code>// Swap function swapping values stored in given 2 pointers
+void swap(data_type *a,data_type *b){
+data_type temp= *a;
+*a=*b;
+*b=temp;
+}</code></pre>
+        </ul>
+        <br />
+        <pre
+          class="language-c match-braces"
+        ><code>// using for loop swapping element i and n-i-1. 
+for(int i=0; i< size_of_array/2;i++){
+ swap(&arr[i],&arr[size_of_array-i-1]);
+}</code></pre>
+        <br />
+        <ul>
+          <li>
+            <b>Finding max element from array: </b>Using a for loop and if
+            conditional
+          </li>
+          <pre class="language-c"><code>data_type max=arr[0];
+for(int i=1; i< size_of_array;i++){
+  if(arr[i]>=max) max=arr[i];
+  else continue;          
+}</code></pre>
+          <br />
+        </ul>
+        <ul>
+          <li>
+            <b>Finding min element from array: </b>Using a for loop and if
+            conditional
+          </li>
+          <pre class="language-c"><code>data_type min=arr[0];
+for(int i=1; i< size_of_array;i++){
+  if(arr[i]<=min) min=arr[i];
+  else continue;          
+}</code></pre>
+          <br />
+        </ul>
+
+        <ul>
+          <li>
+            <b>Sorting array in ascending order: </b>Using a 2 for loops and if
+            conditional
+          </li>
+          <pre
+            class="language-c rainbow-braces"
+          ><code>for(int i=0;i< size_of_array;i++){
+  for(int j=i;j< size_of_array;j++)
+  {
+    if(arr[j]< arr[i])
+    {
+       swap(&arr[j],&arr[i]);
+    }
+    else continue;
+  }
+}</code></pre>
+          <br />
+        </ul>
+
+        
+        <li><b>Linked List: </b><p>Like arrays, Linked List is a linear data structure. Unlike arrays, linked list elements are not stored at a contiguous location; the elements are linked using pointers.It has a dynamic size and ease of insertion and deletion compared to arrays.</p></li><br>
+        <img src="gif/SLL_introduction.gif" alt="SinglyLinkedList_Intro" class="src" style="width :55vw"><br><br><br>
+        <img src="gif/SLL_sample_LL.gif" alt="SinglyLinkedList_Sample_linkedList" class="src"><br><br><br>
+        <ul><li>Basic way of Initializing a SinglyLinkedList: 
+          <pre class="language-c"><code>#include &ltstdio.h&gt
+#include &ltstdlib.h&gt
+typedef struct Node
+{
+  int data;
+  struct Node *nxt;
+}SinglyLinkedList;
+
+int main()
+{
+  //Initializing Node pointers
+  SinglyLinkedList *head;
+  SinglyLinkedList *first;
+  SinglyLinkedList *second;
+  SinglyLinkedList *third;
+  
+  // allocating memory in heap for nodes
+    head = (struct Node *)malloc(sizeof(SinglyLinkedList));
+    first = (struct Node *)malloc(sizeof(SinglyLinkedList));
+    second = (struct Node *)malloc(sizeof(SinglyLinkedList)); 
+    third = (struct Node *)malloc(sizeof(SinglyLinkedList));
+    
+    //Linking Nodes
+    head->nxt = first;
+    first->nxt = second;
+    second->nxt = third;
+    third->nxt = NULL;
+    
+    //Assigning the data for Nodes
+    head->data = 34;
+    first->data = 12;
+    second->data = 13;
+    third->data = 90;
+    
+    return 0;
+  }
+</code></pre></li>
+<br />
+<img src="gif/LinkedList_display.gif" alt="SinglyLinkedList_Display_linkedList" class="src"><br><br>
+<li><b>Displaying (or) Printing Singly Linked List: </b> Below code helps in Displaying Singly Linked List</li>
+<pre><code class="language-c">void DisplayLinkedList(struct Node *ptr)
+{
+  SinglyLinkedList *ptr = head;
+  int i = 1;
+  printf("Displaying Singly Linked List:\n");
+  while (ptr != NULL)
+  {
+      printf("Element %d: %d\n", i, ptr->data);
+      ptr = ptr->nxt;
+      i++;
+  }
+}</code></pre>
+        </ul>
+      
+      </ol>
+      </div>
+      <!-- Code injected by live-server -->
+  </body>
+  </html>
